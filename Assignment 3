@@ -1,0 +1,47 @@
+// Problem 7 - assignment 3
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double deliveryCharge (int w);
+
+void displayCharge ();
+
+int main()
+{
+    displayCharge();
+
+    return 0;
+}
+
+
+double deliveryCharge (int w)
+{   
+    double delichar;
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
+    if (w > 16)
+    {
+        delichar = 3.0 + ((w-16)/4)*0.50;
+    }
+    else
+    {
+        delichar = 3.00;
+    }
+    return delichar;
+    
+}
+
+void displayCharge ()
+{
+    int getweight;
+    cout <<"Enter package weight: ";
+    cin >> getweight;
+
+    cout <<"Package weight = " << getweight /16 << "lb. " << getweight % 16 << "oz. " <<endl;
+    cout <<"Delivery charge = $" << deliveryCharge(getweight);
+
+}
