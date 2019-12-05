@@ -1,0 +1,47 @@
+//Write a program that will calculate and display the total surface area and volume of a can 
+(i.e., a right circular cylinder).  The program should prompt for and read the can's top radius and height in main
+and then call a function, calc.  This function will receive via arguments the can's top radius and height 
+and will perform the required surface area and volume calculations. 
+The surface area and volume values should be “returned” to main via reference parameters. 
+Then, main should display the can’s surface area and volume. Use a global constant for the value of pi = 3.14159. 
+Note: The function calc should not contain any cout or cin statements. 
+Formulas:  volume = pi(r^2)h , A = 2pi(r^2) + 2prh
+Here is an example of what output should look like from running your program (user input is shown in bold):
+Enter can radius (inches): 3.5
+Enter can height (inches): 6.5
+Can surface area = 219.911 square inches
+Can volume = 250.149 cubic inches
+
+****************************************************************
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calc (double radius, double height, double& volume, double& area);
+const double pi = 3.14159;
+
+int main()
+{
+    double radius_main, height_main;
+    double volume, area;
+
+    cout <<"Enter can radius: ";
+    cin >> radius_main;
+    cout <<"Enter height: ";
+    cin >> height_main;
+
+    calc (radius_main, height_main, volume, area);
+    cout << "Can surface area = "<< area << " squares inches" <<endl;
+    cout << "Can volume = "<< volume << " cubic inches" <<endl;
+  
+    return 0;
+}
+
+void calc (double radius, double height, double& volume, double& area)
+{
+    volume = pi * pow(radius,2) * height;
+    area = (2*pi*pow(radius,2)) + (2*pi*radius*height);
+}
