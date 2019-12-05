@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int fact (int n);
+
+int main()
+{
+    int scores, fail=0, pass=0;
+
+    cout <<"Enter number of scores: ";
+
+    while (cin >> scores && scores <= 100 && scores>=0)
+    {   if (scores > 60)
+        {pass ++;}
+        else
+        {fail++;}
+    }
+    cout <<"Total pass scores is " << pass << endl;
+    cout <<"Total fail scores is " << fail;
+    return 0;
+
+}
+
+// If for loop is used, it won't return any values since 
+The 'for' loop used only when we already knew the number of iterations.
