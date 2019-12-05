@@ -1,0 +1,52 @@
+//not completed
+
+//Write a program that will repeatedly prompt for and read in a positive integer, n, and then print out all of its proper divisors (greater than 1 but less than n) and then print the number of proper divisors of n and their sum. Use a void function divisors that will accept the positive integer via an argument and then will determine and display the proper divisor information required. Here is an example of what output should look like from running your program (user input is shown in bold):
+Enter a number: 28
+Proper divisors: 2 4 7 14
+Number of proper divisors = 4
+Sum of proper divisors = 27
+Continue? (y or n): y
+	
+Enter a number: 36
+Proper divisors: 2 3 4 6 9 12 18
+Number of proper divisors = 7
+Sum of proper divisors = 54
+Continue? (y or n): n
+//
+
+**********************************************************************************************
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+//void divisors (int n);
+
+int main()
+{
+    int num,total = 0,sum = 0;
+    char letter;
+
+    do
+    {
+    cout <<"Enter a number: ";
+    cin >> num;
+
+    for (int i = 2; i < num; i++)
+    {
+        if (num % i == 0)
+        {
+            cout <<"Proper divisors: " << i << endl;
+            sum += i;
+            total ++;
+        }
+    }
+    cout <<"Number of proper divisors = " << total << endl;
+    cout <<"Sum of proper divisors = " << sum << endl;
+    cout <<" Continue? " << endl;
+    cin >> letter;
+    }while (letter == 'y');
+
+    return 0;
+}
