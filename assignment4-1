@@ -1,0 +1,44 @@
+//Write a function named time that has one integer-valued parameter, seconds, and 
+three integer-valued reference parameters,
+hours, min, and sec. The function time should convert the passed number of seconds into 
+the equivalent number of hours, minutes, and seconds. 
+(For example, 3789 seconds = 1 hour, 3 minutes, and 9 seconds.)
+Using the reference parameters, the function should directly alter the respective arguments 
+inside the calling function, “returning” the results through these arguments.
+Then, write a complete program to use the function time.
+In main, the program should prompt for and read a number of seconds.
+Then, a call to the time function should be made to do the conversion. 
+Then, main should display the input number of seconds and the equivalent number of hours, minutes, and seconds. 
+Hint: Use integer division and modulus operators. 
+Note: The function time should not contain any cout or cin statements.  
+Here is an example of what output should look like from running your program (user input is shown in bold):
+Enter a time in seconds: 3789	
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void time (int seconds, int& hours, int& min, int& sec);
+
+int main()
+{
+    int second_main, hour_main, min_main,sec_main;
+    cout <<"Enter a time in seconds: ";
+    cin >> second_main;
+
+    time (second_main, hour_main, min_main, sec_main );
+    cout << second_main << " = " << hour_main << 
+    " hour(s) " << min_main << " minute(s) " << sec_main <<
+    " seconds " << endl;
+
+    return 0;
+}
+
+void time (int seconds, int& hours, int& min, int& sec)
+{
+    hours = seconds / 3600;
+    min = (seconds/60) - (hours * 60);
+    sec = seconds - (hours*3600) - (min*60);
+}
