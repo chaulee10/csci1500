@@ -15,7 +15,7 @@ Continue? (y or n): n
 //
 
 **********************************************************************************************
-
+//problem in sum statement and number of divisors of the second input num
 
 #include <iostream>
 #include <cmath>
