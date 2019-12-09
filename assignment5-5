@@ -1,48 +1,40 @@
-c.cpp:22:32: error: no matching function for call to 'mid'
-    cout << "Mid point is " << mid(a.x,b.y,a1.x,b1.y);
-                               ^~~
-c.cpp:10:6: note: candidate function not viable: no known conversion from 'int'
-      to 'Point &' for 1st argument
-void mid(Point& A, Point& B,Point& C, Point& D);
-     ^
-
-
 #include <iostream>
 #include <cmath>
 using namespace std;
 
 struct Point 
 {
-    int x, y;
+    double x, y;
 };
 
-void mid(Point& A, Point& B,Point& C, Point& D);
+Point mid(Point A, Point B);
 
 int main()
 {	
-    Point a,b,a1,b1;
-    char ok;
+    Point a,b;
+    char ok,c;
 
-    cout <<"Enter 1st point (x,y): " ;
-    cin >> a.x >> b.x;
-    cout <<"Enter 2nd point (x,y): " ;
-    cin >> a1.x >> b1.y;
-    
-    cout << "Mid point is " << mid(a.x,b.y,a1.x,b1.y);
-
-    cout <<"Continue ? ";
-    while (ok == 'y')
+    do
     {
-    cout <<"Enter 1st point (x,y): " ;
-    cin >> a.x >> b.x;
-    cout <<"Enter 2nd point (x,y): " ;
-    cin >> a1.y >> b1.y;}
+        cout <<"Enter 1st point (x,y): " ;
+        cin >> c >>  a.x >> c >> a.y >> c;
+        
+        cout <<"Enter 2nd point (x,y): " ;
+        cin >> c >>  a.y >> c >> b.y >> c; 
+        
+        cout << "Mid point is " << mid(a,b);
+        
+        cout <<"Continue ? ";
+        cin >> ok;
 
+    }while ( ok == 'y' || ok == 'Y');
+    
 	return 0;
 }
-void mid(Point& A, Point& B,Point& C, Point& D)
+Point mid(Point A, Point B)
 {
-    double pointx = (A.x+C.x)/2;
-    double pointy = (B.y+D.y)/2;
-    double midPoint = pointx + pointy;
+    Point midPoint;
+    midPoint.x = (A.x+B.x)/2 
+    midPoint.y= (A.y+B.y)/2;
+    return midPoint;
 }
