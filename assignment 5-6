@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+struct time {
+    int hour, minute, second;
+};
+
+struct time calc(struct time num1, struct time num2 );
+
+int main()
+{
+    time number1, number2;
+    cout <<"Enter the first time (hh:mm:ss) ";
+    cin >> number1.hour >> number1.minute >> number1.second;
+
+    cout <<"Enter the first time (hh:mm:ss) ";
+    cin >> number2.hour >> number2.minute >> number2.second;
+
+    calc(number1,number2);
+    
+    return 0;
+
+}
+
+struct time calc(struct time num1, struct time num2 )
+{
+     struct time hr_sum, min_sum =0,sec_sum, all_sum = 0;
+     sec_sum = num.second + num2.second;
+     min_sum = num1.minute+num2.minute+ sec_sum/60;
+     hr_sum = num1.hour+num2.hour+min_sum/60;
+     min_sum = min_sum %60;
+     sec_sum = sec_sum % 60;
+
+    cout <<"Sum of times = " << hr_sum << " : " << min_sum << " " << sec_sum <<endl;
+}
