@@ -1,37 +1,65 @@
 #include <iostream>
 using namespace std;
 
+int main()
+{
+    int table[3][3];
+    double sum1=0, sum2 =0, sum3=0;
 
-int main(){
-	int table[3][3], sum1 = 0,sum2 = 0,sum3 = 0;
+    cout << "Enter row 1: ";
+    for (int i =0; i<3;i++)
+    {
+        cin >> table[0][i];
+    }    
+    cout << "Enter row 2: ";
+    for (int k =0; k<3;k++)
+    {
+        cin >> table[1][k];
+    }
+    cout << "Enter row 3: ";
+    for (int j =0; j<3;j++)
+    {
+        cin >> table[2][j];
+    }
 
-    cout <<"Enter row 1: ";
-    for (int i=0; i<3;i++)
-    {  cin >> table[0][i];}
+    cout << "Table:" << endl;
+    
+    ==================================================
+    /*for (int row=0; row <3; row++)
+    {
+        for (int column =0; column<3; column++)
+        {
+            cout << table[row][column] << " ";
+            cout << endl;
+        }
+    }*/  #THIS CODES PRODUCE WRONG OUTPUT, PAY ATTENTION TO CURVY BRACKETS, 
+    IT MAKES TOTAL DIFFERENT OUTPUT COMPARED TO THE BELOW CODES.
+    =====================================================
 
-    cout <<"Enter row 2: ";
-    for (int i=0; i<3;i++)
-    {  cin >> table[1][i];}
 
-    cout <<"Enter row 1: ";
-    for (int i=0; i<3;i++)
-    {  cin >> table[2][i];}
-
-    cout << "Table: \n";
     for (int row=0; row < 3; row++)
     {
         for (int column=0;column<3; column++)
-        {cout << table[row][column] << " ";}
+        {cout << table[row][column] << " ";} #THIS BRACKET IS THE DIFFERENCE
         cout<<endl;
     }
 
-    cout << "-------------- \n";
+    for (int i=0; i<3;i++)
+    {
+        sum1 += table[i][0];
+    }
+    for (int k=0; k<3;k++)
+    {
+        sum2 += table[k][1];
+    }
+    for (int j=0; j<3;j++)
+    {
+        sum3 += table[j][2];
+    }
+    cout << "------- " << endl;
+    cout << sum1 << " " << sum2 << " " << sum3 << endl;
+    
 
-    sum1 = table[0][0]+table[1][0]+table[2][0];
-    sum2 = table[1][0]+table[1][1]+table[1][2];
-	sum3 = table[2][0]+table[2][1]+table[2][2];
+    return 0;
 
-	cout << sum1 << " " <<  sum2 << " " <<  sum3 << endl;
-
-	return 0;
 }
