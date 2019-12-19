@@ -45,7 +45,8 @@ void time (int seconds, int& hours, int& min, int& sec)
 
 =======================
 WHY THIS CODES GAVE WRONG OUTPUT???
+(TAKE CARE OF MODULUS OF 3600(FOR HOURS) AND THEN MODULUS FOR 60(FOR MIN), THE REMAINING IS SECONS.)
 
 hour = seconds / 3600;
-    minute = (seconds%3600)*60;
+    minute = (seconds%3600)/60;  //OR minute = ((seconds-(hour*3600))/60;
     sec = (seconds%60)*60
