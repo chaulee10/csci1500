@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+struct time 
+{
+    int hours, minute, second;
+};
+struct time getTime ();
+
+int main()
+{
+    getTime ();
+    return 0;
+
+}
+struct time getTime ()
+{
+    int input;
+    struct time temp;
+    cout <<"Enter a time: ";
+    cin >> input;
+    temp.hours = input / 10000;
+    temp.minute = (input/100)%100;
+    temp.second = input%100;
+    cout << input << " is converted to " << temp.hours << " hours "
+        << temp.minute << " minutes " << temp.second << " seconds." << endl;
+    return temp;
+
+}
