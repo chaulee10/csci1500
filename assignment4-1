@@ -42,3 +42,10 @@ void time (int seconds, int& hours, int& min, int& sec)
     min = (seconds/60) - (hours * 60);
     sec = seconds - (hours*3600) - (min*60);
 }
+
+=======================
+WHY THIS CODES GAVE WRONG OUTPUT???
+
+hour = seconds / 3600;
+    minute = (seconds%3600)*60;
+    sec = (seconds%60)*60
