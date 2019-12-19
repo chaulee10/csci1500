@@ -1,0 +1,79 @@
+OVERLOADED FUNCTIONS
+
+#include <iostream>
+using namespace std;
+
+void input (double& a);
+void input (double& a,double& b);
+void input (double& a,double& b,double& c);
+
+double prim(double& a, double& peri_circle);
+double prim(double& a,double& b, double& peri_rect);
+double prim(double& a,double& b, double& c, double& peri_tri);
+
+
+int main ()
+{
+    int option;
+    double a1,b1,c1, perimeter=0;
+    cout <<" Select shape ( 1= circle; 2= rectangle, 3= triangle, other to exit " ;
+    cin >> option;
+
+    switch (option)
+    {
+        case 1:
+            input(a1);
+            cout << "Perimeter: " << prim(a1, perimeter);
+            break;
+
+        case 2:
+            input(a1,b1);
+            cout << "Perimeter: " << prim(a1,b1,perimeter);
+            break;
+
+        case 3:
+            input (a1,b1,c1);
+            cout << "Perimeter: " << prim(a1,b1,c1,perimeter);
+            break;
+
+        default:
+            cout <<" Bye ...";
+            break;
+    }
+    return 0;
+
+
+}
+
+void input (double& a)
+{
+    cout <<"Enter circle diameter: ";
+    cin >> a;
+}
+void input (double& a, double& b)
+{
+    cout <<"Enter rectangle length and width: ";
+    cin >> a >> b;
+}
+void input (double& a,double& b, double& c)
+{
+    cout <<"Enter triangle side lengths: ";
+    cin >> a >> b>> c;
+}
+
+double prim(double& a, double& peri_circle)
+{
+    peri_circle = 3.14159 * a;
+    return peri_circle;
+}
+
+double prim(double& a,double& b, double& peri_rect)
+{   
+    peri_rect = 2*(a+b);
+    return peri_rect;
+}
+double prim(double& a,double& b,double& c,double& peri_tri)
+{
+    peri_tri = a + b + c;
+    return peri_tri;
+}
