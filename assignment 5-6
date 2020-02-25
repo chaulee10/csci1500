@@ -1,41 +1,32 @@
 #include <iostream>
 using namespace std;
 
-struct time {
-    int hour, minute, second;
+struct time
+{
+    int hr, min,sec;
 };
-
-struct time calc(struct time num1, struct time num2 );
+struct time sum (struct time time_1,struct time time_2);
 
 int main()
 {
-    struct time number1, struct time number2;
+    struct time first, second;
+    struct time variable;
     char a;
-    cout <<"Enter the first time (hh:mm:ss) ";
-    cin >> number1.hour >> a >> number1.minute >> a >> number1.second;
 
-    cout <<"Enter the second time (hh:mm:ss) ";
-    cin >> number2.hour >> a >> number2.minute >> a >> number2.second;
-
-    calc(number1,number2);
-    
-    return 0;
-
+    cout <<"Enter the 1st time: ";
+    cin >> first.hr >> a >>first.min >> a >>first.sec;
+    cout <<"Enter the second time: ";
+    cin >> second.hr >> a  >>second.min >> a >>second.sec;
+    variable = sum(first, second);
+    cout <<"Sum of times: " ;
+    cout << variable.hr <<":" << variable.min<<":"<<variable.sec;
 }
 
-struct time calc(struct time num1, struct time num2 )
+struct time sum (struct time time_1,struct time time_2)
 {
-     struct time hr_sum, time min_sum =0, time sec_sum, time all_sum = 0;
-     sec_sum = num1.second + num2.second;
-
-     min_sum = num1.minute+num2.minute+ sec_sum/60;
-
-     hr_sum = num1.hour+num2.hour+min_sum/60;
-
-     min_sum = min_sum %60;
-     
-     sec_sum = sec_sum % 60;
-
-cout <<"Sum of times = " << hr_sum << " : " << min_sum << " " << sec_sum <<endl;
+    struct time final;
+    final.sec = (time_1.sec + time_2.sec)%60;
+    final.min = ((time_1.min + time_2.min)%60 ) +  (time_1.sec + time_2.sec)/60;
+    final.hr = (time_1.hr + time_2.hr ) + (time_1.min + time_2.min)/60;
+    return final;
 }
-
