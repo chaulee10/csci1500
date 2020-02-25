@@ -1,40 +1,35 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-struct Point 
-{
-    double x, y;
+struct Point {
+    double x,y;
 };
-
-Point mid(Point A, Point B);
+Point mid(Point a, Point b);
 
 int main()
-{	
-    Point a,b;
-    char ok,c;
-
+{
+    Point c,d;
+    
+    Point midpoint;
+    char com, ans;
     do
     {
-        cout <<"Enter 1st point (x,y): " ;
-        cin >> c >>  a.x >> c >> a.y >> c;
-        
-        cout <<"Enter 2nd point (x,y): " ;
-        cin >> c >>  a.y >> c >> b.y >> c; 
-        
-        cout << "Mid point is " << mid(a,b);
-        
-        cout <<"Continue ? ";
-        cin >> ok;
-
-    }while ( ok == 'y' || ok == 'Y');
-    
-	return 0;
+        cout <<"Enter 1st point ";
+        cin >> c.x >> com >> c.y;
+        cout <<"Enter 2nd point: ";
+        cin >> d.x >> com >> d.y;
+        midpoint = mid(c,d);
+        cout <<"Mid point is (" << midpoint.x << "," << midpoint.y << ")";
+        cout <<"\nContinue? ";
+        cin >> ans;
+    }while(ans == 'y');
+    return 0;
 }
-Point mid(Point A, Point B)
-{
-    Point midPoint;
-    midPoint.x = (A.x+B.x)/2 
-    midPoint.y= (A.y+B.y)/2;
-    return midPoint;
+
+Point mid(Point a, Point b)
+{   
+    Point formula;
+    formula.x = (a.x + b.x)/2.0;
+    formula.y = (a.y + b.y)/2.0;
+    return formula;
 }
