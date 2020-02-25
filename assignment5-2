@@ -1,46 +1,43 @@
 #include <iostream>
-#include <iomanip>
 #include <string>
 using namespace std;
 
+int main()
+{
+    string name[10];
+    double price[10];
+    double low = 9999999;
 
-int main(){
-	string names[3];
-    double price[3];
-    double min = 1000000000.0;
-    int i;
-
-    for (i=0; i<3;i++)
+    cout <<"Enter stores: ";
+    for (int i=0; i<3; i++)
     {
-        cout <<"Enter stores ";
-        cin>> names[i];
-
-        cout <<"Enter pries: ";
-        cin >> price[i];
-
-        if (price[i] < min)
+        cin >> name[i];
+    }
+    cout <<"Enter prices ";
+    for (int j=0; j<3; j++)
+    {
+        cin >> price[j];
+        if (price[j] < low)
         {
-            min=price[i];
+            price[j] = low;
         }
     }
-    cout <<"Lowest price is " << min << endl;
-    //cout <<"The lowest stores are " << names[i]; // names[i] the problem
-    // CAN"T PRINT OUT THE ARRAY STRAIGHTFORWARD, MUST USE LOOPS
-    
-    cout << "Stores With Lowest Price Of: " << min << endl;
-	for(int j = 0; j < 3; j++){
-		if(price[j] == min){
-			cout << names[j] << " " << price[j] << endl;
-			
-		}
-	}
-    
-    for (int x=0; x<3; x++)
+
+    cout <<"The stores with lowest prices are: ";
+    for (int k=0; k<3; k++)
     {
-        if (price[x] <= min + (min*0.1))
-        {cout << " Names of stores and prices who charge within 10% the lowest price"
-        " are " << names[x] << " " << price[x] << endl;}
+        if (price[k] == low)
+        {
+            cout << name[k] << endl;
+        }
     }
 
-	return 0;
+    cout <<"The stores with lowest prices + 10% are: ";
+    for (int h=0; h<3; h++)
+    {
+        if (price[h] == (low + low*0.1))
+        {
+            cout << name[h] << " with prices of " << price[h] << endl;
+        }
+    }
 }
