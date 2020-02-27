@@ -1,0 +1,71 @@
+
+#include <iostream>
+using namespace std;
+
+void input (double& a);
+void input (double& a,double& b);
+void input (double& a,double& b,double& c);
+
+double prim(double a);
+double prim(double a,double b );
+double prim(double a,double b, double c);
+
+int main()
+{
+    double a,b,c;
+    int shape;
+    cout <<"Select shapes (1=circle, 2=rectangle, 3=triangle, other to exit): ";
+    cin >> shape;
+    switch(shape)
+    {
+        case 1:
+        input(a);
+        cout << "perimeter = " << prim(a);
+        break;
+        case 2:
+        input(a,b);
+        cout << "perimeter = " << prim(a,b);
+        break;
+        case 3:
+        input(a,b,c);
+        cout << "perimeter = " << prim(a,b,c);
+        break;
+        default:
+        exit(1);
+
+    }
+    cout <<"\nBye....";
+}
+
+void input (double& a)
+{
+    cout <<"Enter circle diameter: ";
+    cin >> a;
+}
+void input (double& a, double& b)
+{
+    cout <<"Enter rectangle length and width: ";
+    cin >> a >> b;
+}
+void input (double& a,double& b, double& c)
+{
+    cout <<"Enter triangle side lengths: ";
+    cin >> a >> b>> c;
+}
+
+double prim(double a)
+{
+    double peri_circle = 3.14159 * a;
+    return peri_circle;
+}
+
+double prim(double a,double b)
+{   
+    double peri_rect = 2*(a+b);
+    return peri_rect;
+}
+double prim(double a,double b,double c)
+{
+    double peri_tri = a + b + c;
+    return peri_tri;
+}
