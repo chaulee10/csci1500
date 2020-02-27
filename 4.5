@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+double wage (double& rate, int over=0);
+
+int main ()
+{
+    string name;
+    int time;
+    double rate;
+    char ans;
+
+    do
+    {
+        cout <<"Enter name: ";
+        cin >> name;
+        cout <<"Enter rate: ";
+        cin >> rate;
+        cout <<"OVer time hours " ;
+        cin >> time;
+        cout <<"Name " << name << " Wages: " << wage(rate, time);
+        cout <<"\nEnter another? ";
+        cin >> ans;
+    }while (ans == 'y');
+}
+
+double wage (double& rate, int over)
+{
+    double salary = 40*rate + (over *(rate*1.5));
+    return salary;
+}
