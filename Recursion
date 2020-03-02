@@ -37,3 +37,4 @@ sumOfRoots(3)
   return 1
   
   finally we get 1+ sqrt(2) + sqrt(3)*/
+  IF YOU DO SQRT OF SUMOFROOTS, YOU'RE DOING AN EXTRA SQRT.
