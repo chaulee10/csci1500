@@ -1,0 +1,41 @@
+
+
+int getradius() //same as readScore
+{
+  	int radius;
+  	cout << "Enter the radius of a circle: " << endl;
+  	cin >> radius;
+  
+  	return radius;
+}
+
+// Works for 1 circle. We can write another function which acceps many radii.
+void printArea(int radius)
+{
+  	cout << "The area of a circle with radius " << radius << " is " << (3.14 * radius * radius) << endl;
+}
+
+void printAllAreas(int r1, int r2, int r3)
+{
+  	printArea(r1);
+  	printArea(r2);
+  	printArea(r3);
+}
+
+// This
+void getAllRadii(int& r1, int& r2, int& r3)
+{
+  	r1 = getradius();
+  	r2 = getradius();
+  	r3 = getradius();
+}
+
+int main()
+{
+  	int first, second, third;
+  
+  	getAllRadii(first, second, third);	// <-- Because getAllRadii accepts its parameters *by reference*, 
+  									    //     it will actually change the values of our first, second, and third variables.
+  
+  	printAllAreas(first, second, third);
+}
