@@ -1,0 +1,39 @@
+
+/*Write a recursive C++ function definition of sumOfRoots, that will accept a positive integer argument, n, and will calculate and return the sum of the first n square roots. */
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float sumOfRoots (int n);
+
+int main()
+{
+    int input;
+    cout <<"Enter a number: ";
+    cin >> input;
+    cout <<"The sum of roots is "  << sumOfRoots(input);
+}
+
+float sumOfRoots (int n)
+{
+    if (n==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return sumOfRoots(n-1) + sqrt(n); //??????
+    }
+}
+
+
+THE PROCESS
+/*
+sumOfRoots(3)
+  return sumOfRoots(2) + sqrt(3)
+  
+  return sumOfRoots(1) + sqrt(2)
+  
+  return 1
+  
+  finally we get 1+ sqrt(2) + sqrt(3)*/
